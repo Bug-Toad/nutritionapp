@@ -1,0 +1,21 @@
+nav{
+    margin-bottom: 20px;
+}
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22 px;
+}
+body {
+    font-size: 22px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
