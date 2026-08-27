@@ -1,0 +1,28 @@
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    color: #005f99;            /* deep blue */
+}
+nav a:hover {
+    background-color: #b0d2e9;  /* soft icy blue */
+}
+body {
+    font-size: 22px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Cool Clean Minimal Theme */
+body {
+    background-color: #b0d2e0; /* pale cool gray-blue */
+    color: #222;               /*near black text */
+    font-family; Helvetica, Arial, sans-serif;
+}
