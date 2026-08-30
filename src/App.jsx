@@ -1,20 +1,31 @@
 import { useState } from 'react'
 import './App.css'
+import Navigation from './Navigation'
+import Home from './Home'
+import SearchFood from './SearchFood'
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'search':
+        return <SearchFood />
+      case 'home':
+      default:
+        return <Home onNavigate={setCurrentPage} />
+    }
+  }
 
   return (
     <div className="app">
-      <header>
-        <h1>Nutrition App</h1>
-      </header>
-      <main>
-        <p>Welcome to your Nutrition App</p>
-        <button onClick={() => setCount(count + 1)}>
-          Count: {count}
-        </button>
+      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+      <main className="main-content">
+        {renderPage()}
       </main>
+      <footer className="footer">
+        <p>&copy; 2024 NutritionApp. All rights reserved. Data from USDA FoodData Central</p>
+      </footer>
     </div>
   )
 }
