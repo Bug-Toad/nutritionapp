@@ -1,62 +1,105 @@
 
-Technical RoadmapArchitecture & Core FeaturesCore Modules
 
-- Auth (Supabase)
-    
-- User Profile
-    
-- Food Database
-    
-- Meal Logging
-    
-- Daily Summary
-    
-- Recommendations
-    
-- Syncing
-    
+## 🧩 **1. Core Product Logic (Business Domain Layer)**
 
-High-Level Architecture
+These are the modules that define _what the app actually does_.
 
-- Web → React (Next.js)
+- **Auth (Supabase Auth)** — user identity, login, signup
     
-- Mobile → React Native (Expo)
+- **User Profile** — age, weight, goals, dietary restrictions
     
-- Backend → NestJS
+- **Food Database** — USDA + custom foods, macros, micronutrients
     
-- Database → PostgreSQL (Supabase)
+- **Meal Logging** — timestamped entries, portion sizes
     
-- ORM → Prisma
+- **Daily Summary** — totals, targets, progress
     
-- Auth → Supabase Auth
+- **Recommendations** — meal suggestions, macro targets
     
-- Storage → Supabase Storage
+- **Syncing** — web ↔ mobile data consistency
     
 
----
+This is your _domain layer_ — the heart of the nutrition app.
 
-Development Environment
 
-- Node.js
+
+
+## 🏗️ **2. Application Architecture (System Structure)**
+
+These define _how the system is built_.
+
+### **Frontend**
+
+- **React (Next.js)** — web app
     
-- pnpm
-    
-- Docker
-    
-- Supabase CLI
-    
-- Prisma CLI
-    
-- NestJS CLI
-    
-- Expo CLI
+- **React Native (Expo)** — mobile app
     
 
-Monorepo Structure/nutrition-app /apps /web /mobile /api /packages /ui /types /utils
+### **Backend**
 
----
+- **NestJS** — API, business logic, modular architecture
+    
 
-Backend Development
+### **Database & Data Layer**
+
+- **PostgreSQL (Supabase)** — relational DB
+    
+- **Prisma** — ORM, migrations, typed queries
+    
+
+### **Auth & Storage**
+
+- **Supabase Auth** — JWT-based authentication
+    
+- **Supabase Storage** — images, food photos
+    
+
+This is the _technical skeleton_ of the system.
+
+## 🛠️ **3. Development Environment & Tooling**
+
+These are tools used during development, not runtime.
+
+- **Node.js** — runtime for JS/TS
+    
+- **pnpm** — package manager
+    
+- **Docker** — local Postgres, containerized backend
+    
+- **Supabase CLI** — local Supabase dev
+    
+- **Prisma CLI** — schema + migrations
+    
+- **NestJS CLI** — backend scaffolding
+    
+- **Expo CLI** — mobile scaffolding
+    
+
+These tools support building, testing, and running the system locally.
+
+## 📦 **4. Codebase Organization (Monorepo Structure)**
+
+These define _how your code is organized_.
+
+Code
+
+```
+/nutrition-app
+  /apps
+    /web       → Next.js
+    /mobile    → React Native
+    /api       → NestJS
+  /packages
+    /ui        → shared components
+    /types     → shared TypeScript models
+    /utils     → shared helpers
+```
+
+This is your _workspace architecture_ — shared code, modular apps.
+
+## 🔧 **5. Backend Development Responsibilities**
+
+These are backend _tasks_, not technologies.
 
 - NestJS project setup
     
@@ -71,15 +114,17 @@ Backend Development
 - Swagger documentation
     
 
----
+This is your backend _implementation workflow_.
 
-Web App Development
+## 🎨 **6. Web App Development Responsibilities**
+
+Again, tasks rather than technologies.
 
 - Next.js setup
     
 - Supabase auth
     
-- Global state
+- Global state (Zustand/Redux)
     
 - Pages: Login, Dashboard, Food Search, Meal Logging, Profile
     
@@ -88,50 +133,62 @@ Web App Development
 - Deploy to Vercel
     
 
----
+This is your web _feature development pipeline_.
 
-Mobile App Development
+## 📱 **7. Mobile App Development Responsibilities**
+
+Tasks for the mobile side.
 
 - Expo setup
     
 - Supabase auth
     
-- Navigation
+- Navigation (React Navigation)
     
 - Screens: Login, Daily Summary, Log Meal, Barcode Scan, Profile
     
-- Offline caching
+- Offline caching (React Query + SQLite)
     
 - Deploy to TestFlight / Play Store
     
 
----
+This is your mobile _feature development pipeline_.
 
-Deployment & Infrastructure
+## ☁️ **8. Deployment & Infrastructure**
 
-- [Fly.io](https://Fly.io) or AWS
-    
-- Recommended: Vercel + [Fly.io](https://Fly.io) + Supabase
-    
-- CI/CD via GitHub Actions
-    
+These are runtime hosting and delivery services.
 
----
-
-Observability & Maintenance
-
-- Logging (Winston/Pino)
+- **Fly.io** — backend hosting
     
-- Monitoring (Sentry)
+- **AWS** — alternative backend hosting
     
-- Error tracking (Sentry)
+- **Vercel** — frontend hosting
     
-- Performance metrics (OpenTelemetry)
+- **Supabase** — DB, auth, storage
+    
+- **GitHub Actions** — CI/CD pipelines
     
 
----
+This is your _production infrastructure_.
 
-Final Technical ChecklistBackend
+## 📊 **9. Observability & Maintenance**
+
+These ensure reliability and monitoring.
+
+- **Winston / Pino** — logging
+    
+- **Sentry** — monitoring + error tracking
+    
+- **OpenTelemetry** — performance metrics
+    
+
+This is your _operational stability layer_.
+
+## 🧾 **10. Final Technical Checklist (Validation Layer)**
+
+This is not tech — it’s your _readiness checklist_.
+
+### Backend
 
 - NestJS running
     
@@ -144,7 +201,7 @@ Final Technical ChecklistBackend
 - API documented
     
 
-Web
+### Web
 
 - Next.js deployed
     
@@ -155,7 +212,7 @@ Web
 - Food search UI
     
 
-Mobile
+### Mobile
 
 - Expo app running
     
@@ -166,10 +223,45 @@ Mobile
 - Offline caching
     
 
-DevOps
+### DevOps
 
 - CI/CD pipelines
     
 - Environment variables set
     
 - Production database configured
+    
+
+## 🎯 **Summary: Organized by Purpose**
+
+### **Product Logic**
+
+Auth, Profiles, Food DB, Meal Logging, Daily Summary, Recommendations, Syncing
+
+### **Architecture**
+
+React, React Native, NestJS, PostgreSQL, Prisma, Supabase
+
+### **Dev Tools**
+
+Node, pnpm, Docker, CLIs
+
+### **Code Organization**
+
+Monorepo with apps + shared packages
+
+### **Implementation Tasks**
+
+Backend dev, web dev, mobile dev
+
+### **Infrastructure**
+
+Vercel, Fly.io, Supabase, GitHub Actions
+
+### **Observability**
+
+Sentry, Winston/Pino, OpenTelemetry
+
+### **Readiness Checklist**
+
+Backend, Web, Mobile, DevOps validation
